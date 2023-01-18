@@ -1,0 +1,14 @@
+{:paths ["src"]
+ :deps {org.clojure/tools.cli {:mvn/version "1.0.214"}
+        org.clojure/data.xml {:mvn/version "0.2.0-alpha8"}
+        hiccup/hiccup {:mvn/version "1.0.5"}
+        io.github.nextjournal/clerk {:mvn/version "0.12.707"}}
+ :aliases
+ {:nextjournal/clerk
+  {:exec-fn nextjournal.clerk/build!
+   :exec-args {:paths ["src/bb_inkscape_example.clj"]}
+   ;; TODO: add all notebooks you want to have built ☝️
+   ;; if you just want to build one notebook, set `:index`
+
+   ;; optional list of aliases to include in the build
+   :nextjournal.clerk/aliases []}}}

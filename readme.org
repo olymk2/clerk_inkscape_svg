@@ -1,0 +1,3 @@
+#+TITLE: Run notebook locally
+
+clj -X:nextjournal/clerk :browse true

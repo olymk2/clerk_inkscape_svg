@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>BB Example Script</name>
+    <id>org.inkscape.example.bb_inkscape_example</id>
+    <effect needs-document="true">
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="BB Example script"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="shell">bb_inkscape_example.sh</command>
+    </script>
+</inkscape-extension>
