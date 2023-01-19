@@ -1,10 +1,8 @@
-(ns
- ^{:nextjournal.clerk/visibility {:code :hide}}
- bb-inkscape-example
+^{:nextjournal.clerk/visibility #{:hide-ns}}
+(ns bb-inkscape-example
   (:require [nextjournal.clerk :as clerk]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.data.xml :as xml]
-            [clojure.pprint :refer [pprint]]
             [clojure.java.io :as io]
             [clojure.string :as str]))
 
@@ -18,13 +16,14 @@
 ; ## INX file
 ;; To generate an inkscape plugin we need to create a configuration file, this is an xml document which ends in .inx
 
-^{::clerk/visibility {:code :hide}}
+
+^{:nextjournal.clerk/visibility :hide}
 (clerk/html [:pre (slurp "src/bb_inkscape_example.inx")])
 
 ; ## Shell script
 
 ;; Along side the INX file we need a shell script to invoke bb, inkscape has support for a limited set of languages but shell being one we can send to babashka, would be nice to see native support here.
-^{::clerk/visibility {:code :hide}}
+^{:nextjournal.clerk/visibility :hide}
 (clerk/html [:pre (slurp "src/bb_inkscape_example.sh")])
 
 ;; ## Functions for a simple Babashka script
@@ -32,9 +31,6 @@
 (def cli-options
   [["-i" "--id ID" "Port number"]
    ["-h" "--help"]])
-
-(defn node->str [node]
-  (with-out-str (pprint node)))
 
 (defn fetch-document->xml
   "Load an xml document and parse to an xml sequence
@@ -102,7 +98,6 @@
          (str/join "")
          (hacky-svgify))))
 
-(clerk/show! "src/bb_inkscape_example.clj")
-
-(comment (clerk/serve! {:browse? true}))
+(comment (clerk/serve! {:browse? true})
+         (clerk/show! "src/bb_inkscape_example.clj"))
 

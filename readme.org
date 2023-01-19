@@ -1,3 +1,13 @@
-#+TITLE: Run notebook locally
+#+TITLE: Example SVG notebooks
 
+Various svg generation and editing, also inkscape plugin example.
+
+View in the garden at https://github.clerk.garden/olymk2/clerk_inkscape_svg/
+
+
+* Inkscape info
+INX file specification
+https://inkscape.gitlab.io/extensions/documentation/authors/inx-widgets.html
+
+* Test project builds locally
 clj -X:nextjournal/clerk :browse true
